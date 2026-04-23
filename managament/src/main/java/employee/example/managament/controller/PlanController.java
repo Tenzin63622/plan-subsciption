@@ -24,9 +24,15 @@ public class PlanController {
         return service.update(id, p);
     }
 
+    // @DeleteMapping("/{id}")
+    // public void delete(@PathVariable Long id) {
+    // service.delete(id);
+
+    // }
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public String delete(@PathVariable Long id) {
         service.delete(id);
+        return "Delete successful";
     }
 
     @GetMapping

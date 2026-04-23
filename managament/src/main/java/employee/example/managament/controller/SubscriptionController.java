@@ -1,5 +1,6 @@
 package employee.example.managament.controller;
 
+// import employee.example.managament.dto.CancelRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import employee.example.managament.entity.Subscription;
@@ -23,9 +24,16 @@ public class SubscriptionController {
     }
 
     @PutMapping("/cancel/{id}")
-    public Subscription cancel(@PathVariable Long id, @RequestParam String type) {
-        return service.cancel(id, type);
+    public Subscription cancel(@PathVariable Long id, @RequestParam String type)
+    {
+    return service.cancel(id, type);
     }
+
+    // @PutMapping("/cancel/{id}")
+    // public Subscription cancel(@PathVariable Long id,
+    //         @RequestBody CancelRequest request) {
+    //     return service.cancel(id, request.getType());
+    // }
 
     @GetMapping("/{userId}")
     public Subscription get(@PathVariable Long userId) {
